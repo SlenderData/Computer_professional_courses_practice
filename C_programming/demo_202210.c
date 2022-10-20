@@ -264,19 +264,59 @@ int test14()
 int test15()
 {
     int n, i;
-    float sum = 1, t = 1;
-    printf("Please input: n=");
+    float sum = 0, t = 0;
+    printf("Please input: n = ");
     scanf("%d", &n);
-    for (i = 2; i <= n; i++)
+    for (i = 1; i <= n; i++)
     {
         t = t + i;
         sum = sum + (1 / t);
     }
-    printf("1 + 1/(1+2) + 1/(1+2+3) + ... + 1/(1+2+...+n) = %f\n", sum);
+    printf("sum = 1 + 1/(1+2) + 1/(1+2+3) + ... + 1/(1+2+...+n) = %f\n", sum);
+}
+
+int test16() // 判断 100～200 之间素数的个数
+{
+    int n, i, count = 0, flag;
+    for (n = 100; n <= 200; n++)
+    {
+        flag = 1;
+        for (i = 2; i < n; i++)
+        {
+            if (n % i == 0)
+            {
+                flag = 0;
+                break;
+            }
+        }
+        if (flag)
+            count += 1;
+    }
+    printf("100~200 之间素数的总数为 %d\n", count);
+}
+
+// 数组
+
+int test17() // 10位评委打分，打分范围为1～100,去掉最高分和最低分，输出其余8个的平均值
+{
+    int sum = 0, min = 100, max = 1, i, a[10] = {0};
+    float avg;
+    printf("请分别输入10位评委的打分: ");
+    for (i = 0; i < 10; i++)
+    {
+        scanf("%d", &a[i]);
+        if (max < a[i])
+            max = a[i];
+        if (min > a[i])
+            min = a[i];
+        sum = sum + a[i];
+    }
+    avg = (sum - min - max) / 8;
+    printf("去掉最高分和最低分后，选手的最终平均得分为: %.1f\n", avg);
 }
 
 int main()
 {
-    test15();
+    test17();
     return 0;
 }

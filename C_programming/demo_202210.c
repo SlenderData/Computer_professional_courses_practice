@@ -357,8 +357,49 @@ int test19() // 输出 100-999 之间的水仙花数
     printf("\n");
 }
 
+int test20() // 二维数组部分元素初始化
+{
+    int a[3][4] = {{0}, {4}, {8}}, i, j;
+    for (i = 0; i <= 2; i++)
+    {
+        for (j = 0; j <= 3; j++)
+        {
+            printf("%2d", a[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int test21() // 初始化一个已定义数据的二维数组，输出其最大值和所在的行列数
+{
+    int a[3][4] = {{1, 2, 3, 4}, {9, 8, 7, 6}, {-10, 10, -5, 2}}, i, j, max, row, column;
+    printf("有以下数据表:\n");
+    for (i = 0; i <= 2; i++)
+    {
+        for (j = 0; j <= 3; j++)
+        {
+            printf("%4d", a[i][j]);
+        }
+        printf("\n");
+    }
+    max = a[0][0];
+    for (i = 0; i <= 2; i++)
+    {
+        for (j = 0; j <= 3; j++)
+        {
+            if (a[i][j] > max)
+            {
+                max = a[i][j];
+                row = i + 1;
+                column = j + 1;
+            }
+        }
+    }
+    printf("数据表中最大值为%d, 该值位于数据表的第%d行第%d列。\n", max, row, column);
+}
+
 int main()
 {
-    test19();
+    test21();
     return 0;
 }

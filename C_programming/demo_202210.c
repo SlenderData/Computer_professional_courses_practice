@@ -315,8 +315,36 @@ int test17() // 10位评委打分，打分范围为1～100,去掉最高分和最
     printf("去掉最高分和最低分后，选手的最终平均得分为: %.1f\n", avg);
 }
 
+int test18() // 输入10个数，输出最大值、最小值、总合和平均值
+{
+    int max, min, sum = 0, a[10], i;
+    float avg;
+    printf("请输入10个数: ");
+    for (i = 0; i < 10; i++)
+    {
+        scanf("%d", &a[i]);
+        sum = sum + a[i];
+        if (i == 0)
+        {
+            max = a[i];
+            min = a[i];
+        }
+        if (a[i] > max)
+            max = a[i];
+        if (a[i] < min)
+            min = a[i];
+    }
+    avg = sum / 10;
+    printf("最大值为%d, 最小值为%d, 总合%d, 平均值%.2f。\n", max, min, sum, avg);
+}
+
+int test19()
+{
+    
+}
+
 int main()
 {
-    test17();
+    test18();
     return 0;
 }

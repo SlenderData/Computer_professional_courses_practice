@@ -17,11 +17,11 @@
  */
 int test01()
 {
-	int a[10], i;
-	a[9] = 1;
-	for (i = 8; i >= 0; i--)
-		a[i] = (a[i + 1] + 1) * 2;
-	printf("第一天共摘了 %d 个桃子。\n", a[0]);
+    int a[10], i;
+    a[9] = 1;
+    for (i = 8; i >= 0; i--)
+        a[i] = (a[i + 1] + 1) * 2;
+    printf("第一天共摘了 %d 个桃子。\n", a[0]);
 }
 
 /*
@@ -36,23 +36,23 @@ int test01()
  */
 int test02()
 {
-	int i, j, k;
-	for (i = 1; i <= 4; i++)  // 打印上半部分
-	{
-		for (j = 1; j <= 4 - i; j++)
-			printf(" ");
-		for (k = 1; k <= 2 * i - 1; k++)
-			printf("*");
-		printf("\n");
-	}
-	for (i = 3; i >= 1; i--)  // 打印下半部分
-	{
-		for (j = 1; j <= 4 - i; j++)
-			printf(" ");
-		for (k = 1; k <= 2 * i - 1; k++)
-			printf("*");
-		printf("\n");
-	}
+    int i, j, k;
+    for (i = 1; i <= 4; i++)  // 打印上半部分
+    {
+        for (j = 1; j <= 4 - i; j++)
+            printf(" ");
+        for (k = 1; k <= 2 * i - 1; k++)
+            printf("*");
+        printf("\n");
+    }
+    for (i = 3; i >= 1; i--)  // 打印下半部分
+    {
+        for (j = 1; j <= 4 - i; j++)
+            printf(" ");
+        for (k = 1; k <= 2 * i - 1; k++)
+            printf("*");
+        printf("\n");
+    }
 }
 
 /*
@@ -67,25 +67,25 @@ int test02()
  */
 int test03()
 {
-	char i, j, k;
-	for (i = 'x'; i <= 'z'; i++)
-	{
-		for (j = 'x'; j <= 'z'; j++)
-		{
-			for (k = 'x'; k <= 'z'; k++)
-			{
-				if (i != j && j != k && i != k)  // 排除掉同一个人多次比赛的情况
-				{
-					if (i != 'x' && k != 'x' && k != 'z')  // 排除与题目不相符的情况
-					{
-						printf("a 的对手是 %c\n", i);
-						printf("b 的对手是 %c\n", j);
-						printf("c 的对手是 %c\n", k);
-					}
-				}
-			}
-		}
-	}
+    char i, j, k;
+    for (i = 'x'; i <= 'z'; i++)
+    {
+        for (j = 'x'; j <= 'z'; j++)
+        {
+            for (k = 'x'; k <= 'z'; k++)
+            {
+                if (i != j && j != k && i != k)  // 排除掉同一个人多次比赛的情况
+                {
+                    if (i != 'x' && k != 'x' && k != 'z')  // 排除与题目不相符的情况
+                    {
+                        printf("a 的对手是 %c\n", i);
+                        printf("b 的对手是 %c\n", j);
+                        printf("c 的对手是 %c\n", k);
+                    }
+                }
+            }
+        }
+    }
 }
 
 /*
@@ -94,18 +94,18 @@ int test03()
  */
 int test04()
 {
-	double F[21], a[20], sum = 0;
-	int i;
-	F[0] = 1;
-	F[1] = 2;
-	for (i = 2; i <= 21; i++)
-		F[i] = F[i - 1] + F[i - 2];  // 数组 F[] 用于存放斐波那契数列
-	for (i = 0; i <= 20; i++)
-	{
-		a[i] = F[i + 1] / F[i];  // 数组 a[] 用于存放分数序列
-		sum = sum + a[i];
-	}
-	printf("%lf\n", sum);
+    double F[21], a[20], sum = 0;
+    int i;
+    F[0] = 1;
+    F[1] = 2;
+    for (i = 2; i <= 21; i++)
+        F[i] = F[i - 1] + F[i - 2];  // 数组 F[] 用于存放斐波那契数列
+    for (i = 0; i <= 20; i++)
+    {
+        a[i] = F[i + 1] / F[i];  // 数组 a[] 用于存放分数序列
+        sum = sum + a[i];
+    }
+    printf("%lf\n", sum);
 }
 
 /*
@@ -113,28 +113,28 @@ int test04()
  */
 int factorial(int x)
 {
-	if (x > 1)
-		return x * factorial(x - 1);
-	else
-		return x;
+    if (x > 1)
+        return x * factorial(x - 1);
+    else
+        return x;
 }
 int test05()
 {
-	int result;
-	result = factorial(5);
-	printf("5! = %d", result);
+    int result;
+    result = factorial(5);
+    printf("5! = %d", result);
 }
 
 int main()
 {
-	test01();
-	printf("==============================\n");
-	test02();
-	printf("==============================\n");
-	test03();
-	printf("==============================\n");
-	test04();
-	printf("==============================\n");
-	test05();
-	return 0;
+    test01();
+    printf("==============================\n");
+    test02();
+    printf("==============================\n");
+    test03();
+    printf("==============================\n");
+    test04();
+    printf("==============================\n");
+    test05();
+    return 0;
 }
